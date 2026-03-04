@@ -1,0 +1,12 @@
+source_title,target_checkpoint_name,notes
+"증권, 약관 재 발행","증권, 약관 재발행","spacing variant"
+"갱신 불원","갱신불원","spacing variant"
+"(면대면채널) 연장 정기","(면대면채널)연장 정기","spacing variant"
+"(면대면채널) 감액 완납","(면대면채널)감액 완납","spacing variant"
+"(면대면채널) 보험 종목 변경","(면대면채널)보험 종목 변경","spacing variant"
+"(면대면채널) VUL 추가 납입","(면대면채널)VUL 추가 납입","spacing variant"
+"PUL/SUL 수시추가 납입","PUL/SUL수시추가 납입","spacing variant"
+"직종(직무)& 운전차종 변경","직종(직무)&운전차종 변경","spacing variant"
+"(대면 _ 20.09.10 이전) 카드 자동이체","(면대면채널)카드 자동이체","legacy naming"
+"휴대폰 소액결제 자동이체","휴대폰 소액결제","legacy naming"
+"실손보험 의료급여","실손보험 의료급여 수급권자 확인","abbrev naming"
