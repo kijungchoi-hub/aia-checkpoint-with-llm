@@ -1,0 +1,6 @@
+﻿No.,Question,Domain_최종,ExpectedTitle,ExpectedDomainCode,ExpectedTopicCode,PredictedDomainCode,PredictedTopicCode,Result,Error
+42,퍼펙트의료보험 주피보험자가 사망할 경우 종피보험자만으로 유지가 되나요?,계약정보,(면대면채널)보험 종목 변경,DOM002,DOM002013,ERROR,ERROR,ERROR,fetch failed
+243,자동부활 보험료 납입 시 본인계좌 이외에도 가능한지?,계약정보,자동부활,DOM002,DOM002002,ERROR,ERROR,ERROR,fetch failed
+244,"자동부활로 계약자 내방 하였으나, 피보험자 수익자의 주소정보가 등록되어 있지 않은 것으로 전산 표시되는 경우 어떻게 처리 하나요?",계약정보,자동부활,DOM002,DOM002002,ERROR,ERROR,ERROR,fetch failed
+245,"소멸시효 경과 건 자동부활 요청 시, 대응방법은?",계약정보,자동부활,DOM002,DOM002002,ERROR,ERROR,ERROR,fetch failed
+246,계약자에게 미납안내가 된 경우 미납안내완료로 보나요?,계약정보,"증권, 약관 재발행",DOM002,DOM002001,ERROR,ERROR,ERROR,fetch failed
