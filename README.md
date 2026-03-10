@@ -75,6 +75,42 @@ $env:OPENAI_BASE_URL = "https://api.openai.com/v1"
 
 ## 작업 흐름
 
+### 전체 Flowchart
+
+```mermaid
+flowchart TD
+    A[data/CHECKPOINT_TALK_202508.csv] --> B[enrich_checkpoint_talk_with_3_questions.ps1]
+    B --> C[fill_blank_questions_unique.ps1]
+    C --> D[dedupe_questions_by_title.ps1]
+    D --> E[build_checkpoint_talk_data.ps1]
+    E --> F[data/checkpoint_talk_data.jsonl]
+
+    G[data/Domain_Code_Table.csv] --> E
+    H[data/checkpoint_alias_map.csv] --> E
+
+    I[data/CHECKPOINT_DOMAIN_260202.csv] --> J[build_checkpoint_outline_data.ps1]
+    K[data/CHECKPOINT_202508.csv] --> J
+    J --> L[data/CHECKPOINT_OUTLINE_260202.csv]
+    J --> M[data/CHECKPOINT_OUTLINE_SOURCE_260202.csv]
+    M --> N[build_unknown_outline_candidates.ps1]
+    N --> O[data/CHECKPOINT_UNKNOWN_OUTLINE_CANDIDATES_260202.csv]
+    N --> P[data/CHECKPOINT_UNKNOWN_OUTLINE_SOURCE_260202.csv]
+    M --> Q[test_checkpoint_classifier_from_outline.ps1]
+
+    R[data/checkpoint_prompt.json] --> S[run_checkpoint_classification.ps1]
+    G --> S
+    F --> S
+    T[UserQuestion + LlmAnswer + DomainText] --> S
+    S --> U[Responses API]
+    U --> V[domain_code + topic_code]
+
+    R --> W[test_checkpoint_prompt.ps1]
+    R --> X[test_prompt_with_expected_questions.ps1]
+    A --> X
+    F -. reference data .-> W
+    L -. outline validation .-> Q
+```
+
 ### 상담 데이터 기반 분류용 데이터셋 준비
 
 1. `CHECKPOINT_TALK_202508.csv`에 예상 질문 3개를 생성합니다.
