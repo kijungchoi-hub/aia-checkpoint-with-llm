@@ -29,7 +29,7 @@ if (-not (Test-Path $MappingCsv)) {
 }
 
 # Mapping file header is Korean; parse with explicit ASCII headers for stability.
-$mappingRows = Get-Content -Encoding Default $MappingCsv |
+$mappingRows = Get-Content -Encoding UTF8 $MappingCsv |
   Select-Object -Skip 1 |
   ConvertFrom-Csv -Header checkpoint_code,checkpoint_name,domain_code,domain_name
 

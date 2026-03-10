@@ -43,7 +43,7 @@ if (-not (Test-Path $TalkJsonlPath)) { throw "Talk JSONL not found: $TalkJsonlPa
 $domainCandidates = Get-DomainCandidates $DomainText
 
 $promptTemplate = Get-PromptTemplate $PromptPath
-$mapping = Get-Content -Encoding Default $MappingCsvPath |
+$mapping = Get-Content -Encoding UTF8 $MappingCsvPath |
   Select-Object -Skip 1 |
   ConvertFrom-Csv -Header checkpoint_code,checkpoint_name,domain_code,domain_name
 

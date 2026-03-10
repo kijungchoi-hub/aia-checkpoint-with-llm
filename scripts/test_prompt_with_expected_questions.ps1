@@ -35,7 +35,7 @@ if (-not (Test-Path $MappingCsvPath)) { throw "Mapping CSV not found: $MappingCs
 
 $promptTemplate = Get-PromptTemplate $PromptPath
 
-$mappingRows = Get-Content -Encoding Default $MappingCsvPath |
+$mappingRows = Get-Content -Encoding UTF8 $MappingCsvPath |
   Select-Object -Skip 1 |
   ConvertFrom-Csv -Header checkpoint_code,checkpoint_name,domain_code,domain_name
 

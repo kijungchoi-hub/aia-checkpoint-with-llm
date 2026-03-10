@@ -9,8 +9,8 @@ if ($null -ne $promptObj.prompt) {
   throw "checkpoint_prompt.json must contain 'prompt' or 'prompt_lines'."
 }
 
-# Extract mapping from Domain_Code_Table.csv (CP949 encoded)
-$lines = Get-Content -Encoding Default "data/Domain_Code_Table.csv"
+# Extract mapping from Domain_Code_Table.csv (UTF-8 encoded)
+$lines = Get-Content -Encoding UTF8 "data/Domain_Code_Table.csv"
 $mapping = $lines |
   Select-Object -Skip 1 |
   ConvertFrom-Csv -Header checkpoint_code,checkpoint_name,domain_code,domain_name
